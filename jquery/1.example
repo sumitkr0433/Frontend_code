@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html><head> <title>jQuery Meets the DOM</title> 
+<style> 
+#change_me {position: absolute; top: 100px; left: 400px; font: 24px arial;}
+#move_up #move_down #color #disappear {padding: 5px;}
+</style>
+
+<!-- 1.Javascript Libraray start-->  
+<script src=scripts/jquery-1.5.2.min.js></script>
+</head> 
+<body>
+<!--2. Button Making-->
+        <button id="move_up">Move Up</button>
+				<button id="move_down">Move Down</button>
+				<button id="color">Add Color</button>
+				<button id="disappear">Disappear/Re-appear</button>  
+        
+<!-- 3.On this Division we apply the Change-->
+
+				<div id="change_me">Make Me Do Stuff!</div> 
+		
+		
+<!--4.Scripting Language-->
+				<script>
+				
+<!--5.Jquery Start means dom model start-->
+	
+	$(document).ready(function() {
+	
+<!--6.Applying Dom on move up button-->
+		$("#move_up").click( function() {
+		
+<!--7.when the buttom is apply the animation on the change_me division nested under the .click function-->
+				
+				$("#change_me").animate({top:30},200); //first parameter is how much top and second is in what time
+				
+				});//end move_up
+				
+<!-- 8.Similary Design for move down Button-->
+		$("#move_down").click( function() {	
+
+				$("#change_me").animate({top:500},2000);  
+		});//end move_down
+		
+<!-- 9.Adding the css style i.e adding color to the text-->		
+		$("#color").click( function() {
+				$("#change_me").css("color", "purple");	
+		});//end color
+		
+<!--10 Adding the toggle function on the Disappearance button-->
+		$("#disappear").click( function() {
+				$("#change_me").toggle('slow'); 
+		});//end disappear
+
+	});//end doc ready
+</script> 
+</body> 
+</html>
